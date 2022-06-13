@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class MyConfigurationBean {
     @Bean
     public MyBean beanOperation() {
-        return new MyBeanImplementTwo();//Aqui se debe de instanciar la implementacion deseada
+        return new MyBeanImplement();//Aqui se debe de instanciar la implementacion deseada
     }
 
     @Bean
@@ -21,4 +21,10 @@ public class MyConfigurationBean {
     public MyBeanWithDependency myBeanWithDependency(MyOperation myOperation) {
         return new MyBeanWithDependencyImplement(myOperation);
     }
+     
+    @Bean
+    public MyBeanWithDependency myBeanWithDependency(MyOperationTwo myOperationTwo) {
+    	return new MyBeanWithDependencyImplement(myOperationTwo);
+    }
+   
 }

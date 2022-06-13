@@ -22,7 +22,8 @@ public class FundamentosApplication implements CommandLineRunner {
 	private MyBeanWithDependency myBeanWithDependency;
 
 	@Autowired
-	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency, MyBean myBean, MyBeanWithDependency myBeanWithDependency){
+	public FundamentosApplication (@Qualifier("componentImplement") ComponentDependency componentDependency, MyBean myBean, MyBeanWithDependency myBeanWithDependency) {
+	//(@Qualifier("componentTwoImplement") ComponentDependency componentDependency, MyBean myBean, MyBeanWithDependency myBeanWithDependency){
 		this.componentDependency = componentDependency;
 		this.myBean = myBean;
 		this.myBeanWithDependency = myBeanWithDependency;
@@ -31,6 +32,7 @@ public class FundamentosApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		componentDependency.saludar();
+		componentDependency.charlar();
 		myBean.print();
 		System.out.println(myBeanWithDependency.printWhithDependency());
 	}
